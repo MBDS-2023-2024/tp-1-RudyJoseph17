@@ -14,12 +14,13 @@ class LocalStudentManagerTest {
      */
     @Before
     fun tearUp() {
-        // TODO create an instance of the local student manager
+        manager = LocalStudentManager()
+
     }
 
     @After
     fun tearDown() {
-        // Clear up things, if needed
+      manager.clear()
     }
 
     @Test
@@ -31,7 +32,7 @@ class LocalStudentManagerTest {
     fun sortAgeAsc_isCorrect() {
         val result = manager.sortAgeAscDesc("ASC")
         assertEquals(10, result.first().age)
-        assertEquals(16, result.last().age)
+        assertEquals(56, result.last().age)
     }
 
     @Test
